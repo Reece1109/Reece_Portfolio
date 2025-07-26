@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reece Portfolio</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Navigation -->
+<nav class="nav">
+  <ul class="nav-list">
+    <li data-index="0"><a href="#home" title="Home"><i class="bx bx-home-alt"></i></a></li>
+    <li data-index="1"><a href="#about" title="About Me"><i class="bx bx-user"></i></a></li>
+    <li data-index="2"><a href="#projects" title="Projects"><i class="bx bx-briefcase"></i></a></li>
+    <li data-index="3"><a href="#skills" title="Skills"><i class="bx bx-detail"></i></a></li>
+    <li data-index="4"><a href="#testimonials" title="Testimonials"><i class="bx bx-comment-detail"></i></a></li>
+    <li data-index="5"><a href="#contact" title="Contact"><i class="bx bx-envelope"></i></a></li>
+  </ul>
+</nav>
+
+
+
+
+
+
+  <!-- Scroll Arrow -->
+  <div class="scroll-arrow" onclick="scrollToNextSection()">
+    <i class="bx bx-down-arrow-alt"></i>
+  </div>
+
+  <!-- Portfolio Sections -->
+  <div class="container">
+    <div class="box">
+      <!-- Home Section -->
+      <section class="section home active">
+        <div class="home-content">
+          <div class="home-info">
+            <h3>Hi there</h3>
+            <h1>I'm Reece Simon</h1>
+            <h3>Front-end Developer</h3>
+            <p class="desc">
+              Where creativity meets precision.<br />
+              Building interfaces that speak for themselves.
+            </p>
+            <div class="btn-sci">
+              <a href="Reece CV (2).pdf" download class="btn">Download CV</a>
+              <div class="sci">
+                <a href="#"><i class="bx bxl-github"></i></a>
+                <a href="#"><i class="bx bxl-linkedin"></i></a>
+                <a href="#"><i class="bx bxl-twitter"></i></a>
+                <a href="#"><i class="bx bxl-instagram"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="home-img">
+            <img src="Profile.jpg" alt="Reece Simon Home Photo" />
+          </div>
+        </div>
+      </section>
+
+      <!-- About Section -->
+<!-- About Section -->
+<section class="section about">
+  <div class="about-content">
+    <div class="img-box about-img glow">
+      <img src="Portfolio.jpg" alt="About Reece" />
+    </div>
+    <div class="about-info">
+      <h2 class="title">About Me</h2>
+      <h3>Frontend Developer</h3>
+      <p>
+        I'm a passionate front-end developer with a knack for creating stunning user interfaces.
+        My journey in web development began with a simple curiosity about how websites work,
+        and it has since evolved into a passion of note.
+      </p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="section projects">
+  <div class="projects-content">
+    <h1 class="projects-title">Projects</h1>
+    <h3 class="projects-subtitle">Selected Work</h3>
+    <p class="projects-desc">Some recent creations blending design and code.</p>
+
+    <div class="projects-gallery">
+      <div class="project-card glow slide-in">
+        <h4 class="project-name">Portfolio Website</h4>
+        <p>Built with HTML, CSS, JavaScript and scroll navigation.</p>
+        <a href="https://github.com/yourusername/portfolio-website" target="_blank" class="project-btn btn">View on GitHub</a>
+      </div>
+
+      <div class="project-card glow slide-in">
+        <h4 class="project-name">Weather App</h4>
+        <p>React + API integration with smooth UI transitions.</p>
+        <a href="https://github.com/yourusername/weather-app" target="_blank" class="project-btn btn">View on GitHub</a>
+      </div>
+
+      <div class="project-card glow slide-in">
+        <h4 class="project-name">Recipe Book Online</h4>
+        <p>Made with HTML, CSS, and JavaScript for a responsive design.</p>
+        <a href="https://github.com/yourusername/recipe-book" target="_blank" class="project-btn btn">View on GitHub</a>
+      </div>
+
+      <div class="project-card glow slide-in">
+        <h4 class="project-name">Console Hangman Game C#</h4>
+        <p>Built with C# and .NET for a fun command-line experience.</p>
+        <a href="https://github.com/yourusername/console-hangman" target="_blank" class="project-btn btn">View on GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- Skills Section -->
+<section id="skills" class="section skills">
+  <div class="skills-content">
+    <h1 class="skills-title">Skills</h1>
+    <h3 class="skills-subtitle">Languages, Tools & Platforms</h3>
+    <p class="skills-desc">
+      Here's a curated lineup of my most familiar languages, frameworks, tools, and technologies.
+    </p>
+
+    <div class="skills-gallery">
+      <div class="skill-card glow"><i class="bx bxl-html5"></i> HTML</div>
+      <div class="skill-card glow"><i class="bx bxl-css3"></i> CSS</div>
+      <div class="skill-card glow"><i class="bx bxl-bootstrap"></i> Bootstrap</div>
+      <div class="skill-card glow"><i class="bx bxl-javascript"></i> JavaScript</div>
+      <div class="skill-card glow"><i class="bx bxl-vuejs"></i> Vue.js</div>
+      <div class="skill-card glow"><i class="bx bx-data"></i> MySQL</div>
+      <div class="skill-card glow"><i class="bx bxl-wordpress"></i> WordPress</div>
+      <div class="skill-card glow"><i class="bx bxl-nodejs"></i> Node</div>
+      <div class="skill-card glow"><i class="bx bx-palette"></i> UI/UX Design</div>
+      <div class="skill-card glow"><i class="bx bx-bar-chart-alt-2"></i> SEO</div>
+      <div class="skill-card glow"><i class="bx bxl-python"></i> Python</div>
+      <div class="skill-card glow"><i class="bx bxl-c-plus-plus"></i> C#</div>
+      <div class="skill-card glow"><i class="bx bx-server"></i> MySQL Server</div>
+    </div>
+  </div>
+</section>
+
+      <!-- Testimonials Section -->
+<section id="testimonials" class="section testimonials">
+  <div class="testimonials-content">
+    <h1 class="testimonials-title">Testimonials</h1>
+    <h3 class="testimonials-subtitle">What People Say</h3>
+
+    <div class="testimonial-gallery">
+      <div class="testimonial-card glow slide-in">
+        <img src="Javier Goodwall.jpeg" alt="Javier Goodall" class="testimonial-img" />
+        <h4 class="testimonial-name">Javier Goodall</h4>
+        <p>Reece gets things done the right way. I’ve seen him bring messy ideas to life like it’s second nature at it's finest.</p>
+      </div>
+
+      <div class="testimonial-card glow slide-in">
+        <img src="Umayr Nordien.jpeg" alt="Umayr Nordien" class="testimonial-img" />
+        <h4 class="testimonial-name">Umayr Nordien</h4>
+        <p>He’s got a great eye and very detailed orientated</p>
+      </div>
+
+      <div class="testimonial-card glow slide-in">
+        <img src="Mkuhuseli.jpeg" alt="Mkhuseli Mkeyiya" class="testimonial-img" />
+        <h4 class="testimonial-name">Mkhuseli Mkeyiya</h4>
+        <p>When Reece gets involved, projects move faster and look better. He’s serious about improvement.</p>
+      </div>
+
+      <div class="testimonial-card glow slide-in">
+        <img src="Savannah Samuels.jpeg" alt="Savannah Samuels" class="testimonial-img" />
+        <h4 class="testimonial-name">Savannah Samuels</h4>
+        <p>He listens, solves problems and simply and creatively. He is also a brilliant collaberator and team player</p>
+      </div>
+
+      <div class="testimonial-card glow slide-in">
+        <img src="Keenan Olivier.jpeg" alt="Keenan Olivier" class="testimonial-img" />
+        <h4 class="testimonial-name">Keenan Olivier</h4>
+        <p>You can count on Reece for clean code, smart decisions, and visuals that just make sense.</p>
+      </div>
+
+      <div class="testimonial-card glow slide-in">
+        <img src="Joel Picture.jpeg" alt="Joel Mukanya" class="testimonial-img" />
+        <h4 class="testimonial-name">Joel Mukanya</h4>
+        <p>I’ve taught him everything he knows and he is very well versed</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    </div>
+  </div>
+</section>
+
+
+
+      <!-- Contact Section -->
+<section id="contact" class="section contact">
+  <div class="contact-content">
+    <h1 class="contact-main-title">Contact</h1>
+    <h3 class="connect-highlight">Let's Connect</h3>
+    <p class="contact-lead">
+      Have a cool project in mind? Want to chat ideas? I’d love to hear from you.
+      Fill in the form or reach out via any platform below.
+    </p>
+
+    <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="6" placeholder="What would you like me to work on?" required></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+</section>
+    </div>
+  </div>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
