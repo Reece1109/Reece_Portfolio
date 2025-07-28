@@ -1,55 +1,60 @@
-// Select navigation icons and sections
-const navItems = document.querySelectorAll('.nav-list li');
-const sections = document.querySelectorAll('.section');
-const testimonialCards = document.querySelectorAll('.testimonial-card');
+const apiKey = "90370f614aa6377a271a430582b619f6";
+const videoElement = document.getElementById("rainBackground");
 
-// Scroll to section when nav icon is clicked
-navItems.forEach((item, index) => {
-  item.addEventListener('click', () => {
-    sections[index].scrollIntoView({ behavior: 'smooth' });
+document.getElementById("getWeatherBtn").addEventListener("click", () => {
+  const city = document.getElementById("cityInput").value.trim();
+  const result = document.getElementById("weatherResult");
 
-    // Update active icon
-    navItems.forEach(i => i.classList.remove('active'));
-    item.classList.add('active');
-  });
-});
-
-// Scroll arrow logic
-function scrollToNextSection() {
-  const scrollY = window.scrollY;
-  const viewportHeight = window.innerHeight;
-  const currentIndex = Math.floor(scrollY / viewportHeight);
-  const nextSection = sections[currentIndex + 1];
-  if (nextSection) {
-    nextSection.scrollIntoView({ behavior: 'smooth' });
+  if (!city) {
+    result.innerHTML = "Please enter a city.";
+    return;
   }
-}
 
-// Auto-update active icon when scrolling manually
-window.addEventListener('scroll', () => {
-  const scrollPos = window.scrollY;
-  const viewportHeight = window.innerHeight;
+  fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
+    .then(res => res.json())
+    .then(data => {
+      if (data.cod !== 200) {
+        result.innerHTML = `City not found: ${city}`;
+        return;
+      }
 
-  sections.forEach((section, index) => {
-    const top = section.offsetTop;
-    const bottom = top + section.offsetHeight;
-    if (scrollPos + viewportHeight / 2 >= top && scrollPos + viewportHeight / 2 < bottom) {
-      navItems.forEach(i => i.classList.remove('active'));
-      if (navItems[index]) navItems[index].classList.add('active');
-    }
-  });
+      const { name } = data;
+      const { temp, humidity } = data.main;
+      const { description, main } = data.weather[0];
+      const { speed } = data.wind;
+
+      result.innerHTML = `
+        <h3>${name}</h3>
+        <p><strong>Temperature:</strong> ${temp}°C</p>
+        <p><strong>Condition:</strong> ${description}</p>
+        <p><strong>Humidity:</strong> ${humidity}%</p>
+        <p><strong>Wind:</strong> ${speed} m/s</p>
+      `;
+
+      // Update video source based on weather condition (only if videoElement exists)
+      if (videoElement) {
+        let videoSrc = "default.mp4"; // fallback
+
+        if (main.toLowerCase().includes("clear")) {
+          videoSrc = "clear.mp4";
+        } else if (main.toLowerCase().includes("rain")) {
+          videoSrc = "rain.mp4";
+        } else if (main.toLowerCase().includes("cloud")) {
+          videoSrc = "clouds.mp4";
+        }
+
+        if (videoElement.src !== videoSrc) {
+          videoElement.src = videoSrc;
+          videoElement.load();
+          videoElement.play().catch(e => {
+            // Handle autoplay policy restrictions silently
+            console.warn("Video play prevented:", e);
+          });
+        }
+      }
+    })
+    .catch(err => {
+      result.innerHTML = "Failed to fetch weather.";
+      console.error("Fetch error:", err);
+    });
 });
-
-function revealTestimonials() {
-  const triggerBottom = window.innerHeight * 0.85;
-
-  testimonialCards.forEach(card => {
-    const cardTop = card.getBoundingClientRect().top;
-    if (cardTop < triggerBottom) {
-      card.classList.add('visible');
-    }
-  });
-}
-
-window.addEventListener('scroll', revealTestimonials);
-
